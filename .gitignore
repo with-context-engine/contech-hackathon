@@ -6,14 +6,6 @@ node_modules
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-**/tests/unit/coverage
-**/tests/e2e/coverage
-.last-run.json
-
-# storybook
-storybook-static/
-
 # next.js
 .next/
 out/

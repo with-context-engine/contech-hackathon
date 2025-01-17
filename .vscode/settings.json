@@ -1,6 +1,4 @@
 {
-  "prettier.enable": true,
-  "eslint.enable": false,
   "[javascriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -17,7 +15,17 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.github": false,
+    "**/.vscode": true,
+    "**/.changeset": true,
+    ".npmrc": true
+  },
+  "explorer.excludeGitIgnore": true
 }
