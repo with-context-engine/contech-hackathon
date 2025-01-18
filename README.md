@@ -1,18 +1,8 @@
-# 🚀 Turborepo Starter with Next.js, Nextra, and shadcn/ui
+# 🚀 SaaS Starter
 
 ![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 ![Bun](https://img.shields.io/badge/Bun-%23000000.svg?&logo=bun&logoColor=white)
 
-A powerful monorepo starter template featuring Next.js, Nextra, and a shared pre-configured shadcn/ui package, powered by Bun and Biome.
-
-* [🌟 Features](#-features)
-* [🚀 Quick Start](#-quick-start)
-* [📦 What's Inside?](#-whats-inside)
-* [🛠️ Useful Commands](#️-useful-commands)
-* [🧰 Development Tools](#-development-tools)
-* [🚀 Deployment](#-deployment)
-* [🔗 Useful Links](#-useful-links)
-* [👥 Contributors](#-contributors)
 
 ## 🌟 Features
 
@@ -23,8 +13,9 @@ A powerful monorepo starter template featuring Next.js, Nextra, and a shared pre
 * 🐰 Bun as a fast, all-in-one JavaScript runtime
 * 🌿 Biome for fast, opinionated linting and formatting
 * 🔄 Automated dependency management with Dependabot
-* 👥 Automated contributor recognition
 * 🚀 CI/CD setup with GitHub Actions
+* 🧑‍🔧 Clerk for authentication
+* 💽 Supabase for database and real-time data
 
 ## 🚀 Quick Start
 
@@ -39,7 +30,7 @@ cd contech-hackathon
 bun install
 
 # Start development server
-bun dev
+bun run dev
 ```
 
 ### Add UI Components
@@ -73,6 +64,11 @@ graph TD
 | `@repo/tsconfig` | Shared `tsconfig.json` configurations 🛡️ |
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). 💪
+
+## More Details
+
+<details>
+<summary>Click to expand</summary>
 
 ### Utilities 🧰
 
@@ -213,3 +209,4 @@ You can view the test deployments for these apps:
 	<tbody>
 </table>
 <!-- readme: collaborators, contributors -end -->
+</details>

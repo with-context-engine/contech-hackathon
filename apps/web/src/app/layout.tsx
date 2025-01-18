@@ -1,4 +1,4 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { Header } from '@components/shared/header';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import type React from 'react';
@@ -19,20 +19,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  auth,
 }: Readonly<{
   children: React.ReactNode;
+  auth: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {children}
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <div className="flex-1">
+              {auth}
+              {children}
+            </div>
+          </div>
         </Providers>
       </body>
     </html>
