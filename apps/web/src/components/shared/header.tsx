@@ -19,7 +19,9 @@ export function Header() {
                   className="text-black dark:text-white rounded-md px-4 py-2 flex items-center gap-2 group"
                   type="button"
                 >
-                  Get Started
+                  <span className="font-bold text-black dark:text-white">
+                    Get Started
+                  </span>
                   <Bolt className="w-4 h-4 transition-transform group-hover:rotate-180" />
                 </button>
               </SignInButton>

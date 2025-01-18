@@ -11,7 +11,7 @@ import {
 
 export function Bouncer() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center">
       <Card>
         <CardHeader>
           <CardTitle>Bouncer</CardTitle>
