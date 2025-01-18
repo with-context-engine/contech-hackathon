@@ -1,9 +1,27 @@
 'use client';
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@ui/components/ui/card';
+
 export function Bouncer() {
   return (
-    <div>
-      <h1>Bouncer</h1>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <Card>
+        <CardHeader>
+          <CardTitle>Bouncer</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription>
+            In the unauthenticated state, you can only view the home page.
+          </CardDescription>
+        </CardContent>
+      </Card>
     </div>
   );
 }

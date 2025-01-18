@@ -25,7 +25,7 @@ export function Header() {
               </SignInButton>
             </SignedOut>
             <SignedIn>
-              <UserButton showName={true} />
+              <UserButton />
             </SignedIn>
           </nav>
         </div>
