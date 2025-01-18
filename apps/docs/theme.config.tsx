@@ -2,24 +2,22 @@ import type { DocsThemeConfig } from 'nextra-theme-docs';
 import React from 'react';
 
 const config: DocsThemeConfig = {
-  logo: <span>Next.js, Nextra, shadcn/ui Turborepo starter template</span>,
+  logo: <span>Contech Hackathon Documentation</span>,
   project: {
-    link: 'https://github.com/gmickel/turborepo-shadcn-nextjs',
+    link: 'https://github.com/with-context-engine/contech-hackathon',
   },
-  chat: {
-    link: 'https://discord.com',
-  },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase:
+    'https://github.com/with-context-engine/contech-hackathon',
   footer: {
     content: (
       <span>
         MIT {new Date().getFullYear()} - ©{' '}
         <a
-          href="https://github.com/gmickel/turborepo-shadcn-nextjs"
+          href="https://github.com/with-context-engine/contech-hackathon"
           target="_blank"
           rel="noreferrer"
         >
-          turborepo-next-shadcn-ui
+          with-context-engine/contech-hackathon
         </a>{' '}
         .
       </span>

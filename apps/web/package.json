@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
+    "@repo/auth": "workspace:*",
     "@t3-oss/env-nextjs": "0.10.1",
     "next": "14.2.23",
     "next-app-theme": "0.1.11",
