@@ -16,6 +16,10 @@
   - Use TypeScript for all code; prefer interfaces over types.
   - Avoid enums; use maps instead.
   - Use functional components with TypeScript interfaces.
+
+  Styling
+  - Use Tailwind CSS for styling.
+  - Use Shadcn UI for components.
   
   Syntax and Formatting
   - Use the "function" keyword for pure functions.
