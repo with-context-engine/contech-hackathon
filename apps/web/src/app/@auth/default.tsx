@@ -7,7 +7,7 @@ export default function AuthSlot() {
     <SignedOut>
       <main className="relative min-h-screen flex items-center justify-center">
         <FlickeringGrid
-          className="absolute inset-0 -z-10"
+          className="absolute -z-10"
           squareSize={4}
           gridGap={6}
           color="#60A5FA"
