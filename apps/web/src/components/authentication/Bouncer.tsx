@@ -13,11 +13,12 @@ export function Bouncer() {
     <div className="flex flex-col items-center justify-center">
       <Card>
         <CardHeader>
-          <CardTitle>Bouncer</CardTitle>
+          <CardTitle>Logged Out</CardTitle>
         </CardHeader>
         <CardContent>
           <CardDescription>
-            In the unauthenticated state, you can only view the home page.
+            You are not logged in. To login, click get started to start
+            exploring.
           </CardDescription>
         </CardContent>
       </Card>

@@ -1,6 +1,6 @@
 import { SignedIn, SignedOut } from '@clerk/nextjs';
-import { Bouncer } from '@components/landing/Bouncer';
-import { Header } from '@components/shared/header';
+import { Bouncer } from '@components/authentication/Bouncer';
+import { Header } from '@components/authentication/Header';
 import FlickeringGrid from '@ui/components/ui/flickering-grid';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
