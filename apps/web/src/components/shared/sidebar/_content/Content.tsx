@@ -27,7 +27,11 @@ export function Content({
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
-            <SidebarMenuButton isActive={item.isActive} tooltip={item.title}>
+            <SidebarMenuButton
+              asChild
+              isActive={item.isActive}
+              tooltip={item.title}
+            >
               <Link href={item.href}>
                 <item.icon />
                 <span>{item.title}</span>
