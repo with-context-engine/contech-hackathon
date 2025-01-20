@@ -40,5 +40,13 @@
   },
   "packageManager": "bun@1.1.44",
   "workspaces": ["apps/*", "packages/*"],
-  "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook"]
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@clerk/shared",
+    "esbuild",
+    "lefthook"
+  ],
+  "dependencies": {
+    "@clerk/themes": "^2.2.8"
+  }
 }

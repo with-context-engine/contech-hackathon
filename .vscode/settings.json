@@ -25,7 +25,9 @@
     "**/.github": false,
     "**/.vscode": true,
     "**/.changeset": true,
-    ".npmrc": true
+    ".npmrc": true,
+    "**/dist": true,
+    "**/build": true
   },
   "explorer.excludeGitIgnore": true
 }
