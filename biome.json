@@ -28,6 +28,6 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["packages/ui/**"]
+    "ignore": ["packages/ui/**/**/*.tsx"]
   }
 }
