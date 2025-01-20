@@ -1,10 +1,9 @@
+import { BreadcrumbsContainer } from '@/components/shared/breadcrumbs/BreadcrumbsContainer';
 import { NavigationMenu } from '@/components/shared/sidebar/NavigationMenu';
 import { SignedIn, SignedOut } from '@clerk/nextjs';
-import { Bouncer } from '@components/authentication/Bouncer';
 import { Header } from '@components/authentication/Header';
 import { SignedOutView } from '@components/authentication/_signed-out/View';
 import { SidebarInset, SidebarProvider } from '@repo/ui/components/ui/sidebar';
-import FlickeringGrid from '@ui/components/ui/flickering-grid';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import type React from 'react';
@@ -44,8 +43,8 @@ export default function RootLayout({
                     <NavigationMenu />
                     <main className="flex-1 overflow-auto w-full">
                       <SidebarInset className="relative w-full">
-                        <header className="flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-                          {/* Header content for things like breadcrumbs, search, etc., */}
+                        <header className="flex h-16 shrink-0 items-center px-4 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+                          <BreadcrumbsContainer />
                         </header>
                         <div className="flex flex-1 flex-col gap-4 p-4 pt-0 w-full">
                           {children}
