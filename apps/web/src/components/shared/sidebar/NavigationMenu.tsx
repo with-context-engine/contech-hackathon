@@ -69,7 +69,7 @@ export function ContentInset() {
       <div
         className="absolute left-0 top-0 h-full w-4 cursor-pointer"
         onMouseEnter={() => setOpen(false)}
-      ></div>
+      />
     </SidebarInset>
   );
 }
