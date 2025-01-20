@@ -1,4 +1,7 @@
+import { SignedIn, SignedOut } from '@clerk/nextjs';
+import { Bouncer } from '@components/landing/Bouncer';
 import { Header } from '@components/shared/header';
+import FlickeringGrid from '@ui/components/ui/flickering-grid';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import type React from 'react';
@@ -19,10 +22,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  auth,
 }: Readonly<{
   children: React.ReactNode;
-  auth: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -31,8 +32,22 @@ export default function RootLayout({
           <div className="relative flex min-h-screen flex-col">
             <Header />
             <div className="flex-1">
-              {auth}
-              {children}
+              <SignedOut>
+                <main className="relative min-h-screen flex items-center justify-center">
+                  <FlickeringGrid
+                    className="absolute -z-10"
+                    squareSize={4}
+                    gridGap={6}
+                    color="#60A5FA"
+                    maxOpacity={0.1}
+                    flickerChance={0.1}
+                  />
+                  <div className="size-full flex items-center justify-center">
+                    <Bouncer />
+                  </div>
+                </main>
+              </SignedOut>
+              <SignedIn>{children}</SignedIn>
             </div>
           </div>
         </Providers>
