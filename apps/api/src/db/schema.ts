@@ -8,6 +8,7 @@ export const projectOverview = pgTable(
     projectId: uuid('project_id').primaryKey(),
     userId: text('user_id').notNull().default(sql`requesting_user_id()`),
     name: text('name').notNull(),
+    imageUrl: text('image_url').notNull(),
     description: text('description').notNull(),
   },
   (t) => [
@@ -23,6 +24,18 @@ export const projectOverview = pgTable(
       for: 'insert',
       using: sql``,
       withCheck: sql`requesting_user_id() = user_id`,
+    }),
+    pgPolicy('policy_update', {
+      as: 'permissive',
+      to: authenticatedRole,
+      for: 'update',
+      using: sql`requesting_user_id() = user_id`,
+    }),
+    pgPolicy('policy_delete', {
+      as: 'permissive',
+      to: authenticatedRole,
+      for: 'delete',
+      using: sql`requesting_user_id() = user_id`,
     }),
   ],
 );
