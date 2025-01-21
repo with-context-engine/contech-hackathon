@@ -1,0 +1,14 @@
+{
+    "extends": "@repo/tsconfig/react-library.json",
+    "compilerOptions": {
+      "verbatimModuleSyntax": false,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"],
+        "@ux/*": ["src/*"]
+      }
+    },
+    "include": ["src"],
+    "exclude": ["dist", "build", "node_modules"]
+  }
+  

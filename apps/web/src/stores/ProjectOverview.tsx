@@ -1,12 +1,5 @@
 import { create } from 'zustand';
-
-interface ProjectOverview {
-  projectId: string;
-  userId: string;
-  name: string;
-  imageUrl: string;
-  description: string;
-}
+import type { ProjectOverview } from '../types/ProjectOverview';
 
 interface ProjectOverviewState {
   projects: ProjectOverview[];

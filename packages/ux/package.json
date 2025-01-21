@@ -1,0 +1,6 @@
+{
+    "name": "@repo/ux",
+    "exports": {
+        "./InlineEdit": "./src/InlineEdit.tsx"
+    }
+}
