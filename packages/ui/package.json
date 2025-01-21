@@ -5,8 +5,6 @@
   "private": true,
   "scripts": {
     "ui:add": "bunx --bun shadcn@latest add",
-    "lint": "biome check .",
-    "lint:fix": "biome check . --apply",
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "update-deps": "bun x npm-check-updates -u && bun install"
   },

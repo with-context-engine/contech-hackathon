@@ -15,13 +15,13 @@
   },
   "linter": {
     "enabled": true,
+    "ignore": ["packages/**"],
     "rules": {
       "recommended": true,
       "correctness": {
         "noUndeclaredVariables": "warn"
       }
-    },
-    "ignore": ["packages/ui/**"]
+    }
   },
   "vcs": {
     "enabled": true,
@@ -29,6 +29,6 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["packages/ui/**"]
+    "ignore": ["packages/**"]
   }
 }
