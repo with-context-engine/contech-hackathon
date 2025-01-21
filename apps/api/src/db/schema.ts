@@ -11,33 +11,67 @@ export const projectOverview = pgTable(
     description: text('description').notNull(),
   },
   (t) => [
-    pgPolicy('policy', {
+    pgPolicy('policy_select', {
       as: 'permissive',
       to: authenticatedRole,
       for: 'select',
-      using: sql`requesting_user_id () = user_id`,
-      withCheck: sql``,
+      using: sql`requesting_user_id() = user_id`,
     }),
-    pgPolicy('policy', {
+    pgPolicy('policy_insert', {
       as: 'permissive',
       to: authenticatedRole,
       for: 'insert',
       using: sql``,
-      withCheck: sql`requesting_user_id () = user_id`,
+      withCheck: sql`requesting_user_id() = user_id`,
     }),
   ],
 );
 
-export const Files = pgTable('files', {
-  projectId: uuid('project_id').references(() => projectOverview.projectId, {
-    onDelete: 'cascade',
-  }),
-  path: text('path').notNull(),
-  createdAt: timestamp('created_at').notNull().defaultNow(),
-  updatedAt: timestamp('updated_at')
-    .notNull()
-    .$onUpdate(() => new Date()),
-});
+export const files = pgTable(
+  'files',
+  {
+    id: uuid('id').default(sql`gen_random_uuid()`).primaryKey(),
+    projectId: uuid('project_id')
+      .references(() => projectOverview.projectId, {
+        onDelete: 'cascade',
+      })
+      .notNull(),
+    path: text('path').notNull(),
+    createdAt: timestamp('created_at').notNull().defaultNow(),
+    updatedAt: timestamp('updated_at')
+      .notNull()
+      .$onUpdate(() => new Date()),
+  },
+  (t) => [
+    pgPolicy('select_policy', {
+      as: 'permissive',
+      to: authenticatedRole,
+      for: 'select',
+      using: sql`
+        EXISTS (
+          SELECT 1
+          FROM project_overview
+          WHERE project_overview.project_id = files.project_id
+            AND project_overview.user_id = requesting_user_id()
+        )
+      `,
+    }),
+    pgPolicy('insert_policy', {
+      as: 'permissive',
+      to: authenticatedRole,
+      for: 'insert',
+      using: sql``,
+      withCheck: sql`
+        EXISTS (
+          SELECT 1
+          FROM project_overview
+          WHERE project_overview.project_id = files.project_id
+            AND project_overview.user_id = requesting_user_id()
+        )
+      `,
+    }),
+  ],
+);
 
-export type InsertFiles = typeof Files.$inferInsert;
-export type SelectFiles = typeof Files.$inferSelect;
+export type InsertFiles = typeof files.$inferInsert;
+export type SelectFiles = typeof files.$inferSelect;
