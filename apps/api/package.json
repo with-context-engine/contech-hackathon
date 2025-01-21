@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.4",
+    "postgres": "^3.4.5",
+    "supabase": "^2.6.8"
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "*",
+    "drizzle-kit": "^0.30.2"
+  }
+}
