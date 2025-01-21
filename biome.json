@@ -20,14 +20,12 @@
       "correctness": {
         "noUndeclaredVariables": "warn"
       }
-    }
+    },
+    "ignore": ["packages/ui/**/**/*.tsx"]
   },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
-  },
-  "files": {
-    "ignore": ["packages/ui/**/**/*.tsx"]
   }
 }
