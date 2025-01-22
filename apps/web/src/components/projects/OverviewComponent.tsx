@@ -75,7 +75,6 @@ export default function WorkflowOverview() {
                 <PlusIcon className="w-6 h-6" />
               </Button>
             </TooltipTrigger>
-            {/* @ts-expect-error - Suppressing false positive with Radix UI tooltip */}
             <TooltipContent>
               <p>New Study</p>
             </TooltipContent>
