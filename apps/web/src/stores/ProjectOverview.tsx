@@ -18,6 +18,9 @@ interface ProjectOverviewState {
     projectId: string,
     updates: Partial<Omit<ProjectOverview, 'projectId' | 'userId'>>,
   ) => Promise<void>;
+
+  // API Operations
+  saveProject: () => Promise<void>;
 }
 
 export const useProjectOverviewStore = create<ProjectOverviewState>()(
@@ -45,7 +48,6 @@ export const useProjectOverviewStore = create<ProjectOverviewState>()(
           project?.description ||
           'Double-click to open. Click to edit description.',
       };
-      console.log(newProject);
       set((state) => ({
         projects: [...state.projects, newProject],
       }));
@@ -62,6 +64,27 @@ export const useProjectOverviewStore = create<ProjectOverviewState>()(
         ),
       }));
       return Promise.resolve();
+    },
+
+    saveProject: async () => {
+      const projects = get().projects;
+
+      if (projects.length === 0) {
+        return;
+      }
+
+      const response = await fetch('/api/saveOverview', {
+        method: 'POST',
+        body: JSON.stringify({ projects }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        throw new Error(`Failed to save workflows: ${errorResponse.error}`);
+      }
+      return response.json();
     },
   }),
 );

@@ -1,21 +1,16 @@
 import { createServerClient } from '@supabase/ssr';
-import type { cookies } from 'next/headers';
+import { cookies } from 'next/headers';
 
 /**
- * Updates the session based on the incoming request.
+ * Creates a Supabase server client.
  *
- * This function is necessary because Next.js App Router doesn't allow direct
- * cookie reading. It only provides access to the Request and Response objects.
- * As a result, we need to implement additional logic in this "Server Function"
- * to handle session management and cookie operations.
+ * This function is used to create a Supabase client that can be used in
+ * server-side code (e.g., API routes, server components).
  *
- * The function creates a Supabase server client, manages cookies, checks user
- * authentication, and handles redirects for unauthenticated users.
- *
- * @param request - The incoming Next.js request object
- * @returns A NextResponse object with updated session information
+ * @returns A Supabase server client
  */
-export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
+export function createClient() {
+  const cookieStore = cookies();
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -41,4 +36,4 @@ export const createClient = (cookieStore: ReturnType<typeof cookies>) => {
       },
     },
   });
-};
+}

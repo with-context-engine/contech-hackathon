@@ -29,5 +29,8 @@
     "**/dist": true,
     "**/build": true
   },
-  "explorer.excludeGitIgnore": true
+  "explorer.excludeGitIgnore": true,
+  "search.exclude": {
+    "**/node_modules": false
+  }
 }

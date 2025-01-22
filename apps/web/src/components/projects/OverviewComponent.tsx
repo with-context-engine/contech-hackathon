@@ -38,8 +38,15 @@ function WorkflowSkeleton(): React.JSX.Element {
 }
 
 export default function WorkflowOverview() {
-  const { projects, isLoading, error, setIsLoading, setError, createProject } =
-    useProjectOverviewStore();
+  const {
+    projects,
+    isLoading,
+    error,
+    setIsLoading,
+    setError,
+    createProject,
+    saveProject,
+  } = useProjectOverviewStore();
   const { user } = useUser();
 
   const handleProjectCreation = () => {

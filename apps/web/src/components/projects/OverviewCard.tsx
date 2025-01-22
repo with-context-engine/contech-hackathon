@@ -1,3 +1,4 @@
+import { useProjectOverviewStore } from '@/stores/ProjectOverview';
 import type { ProjectOverview } from '@/types/ProjectOverview';
 import { Button } from '@repo/ui/components/ui/button';
 import {
@@ -18,22 +19,33 @@ import Image from 'next/image';
 
 interface ProjectCardProps {
   project: ProjectOverview;
-  onDelete?: (projectId: string) => Promise<void>;
-  onDuplicate?: (projectId: string) => Promise<void>;
-  onUpdate?: (
-    projectId: string,
-    updates: Partial<ProjectOverview>,
-  ) => Promise<void>;
 }
 
-const WorkflowCard = ({
-  project,
-  onDelete,
-  onDuplicate,
-  onUpdate,
-}: ProjectCardProps) => {
+const WorkflowCard = ({ project }: ProjectCardProps) => {
+  const { updateProject, saveProject } = useProjectOverviewStore();
+
+  // Update Card
+  const HandleUpdate = (updates: Partial<ProjectOverview>) => {
+    updateProject(project.projectId, updates);
+  };
+
+  // Duplicate Card
+  const HandleDuplicate = () => {};
+
+  // Delete Card
+  const HandleDelete = () => {};
+
+  // Handle Double Click
+  const HandleDoubleClick = () => {
+    console.log('Double Clicked');
+    saveProject();
+  };
+
   return (
-    <Card className="w-full max-w-sm overflow-hidden group">
+    <Card
+      className="w-full max-w-sm overflow-hidden group"
+      onDoubleClick={HandleDoubleClick}
+    >
       <div className="relative">
         <div className="relative aspect-video">
           <Image
@@ -51,16 +63,11 @@ const WorkflowCard = ({
                 <span className="sr-only">Open menu</span>
               </Button>
             </DropdownMenuTrigger>
-            {/* @ts-expect-error - Suppressing false positive with Radix UI tooltip */}
             <DropdownMenuContent align="end">
-              {/* @ts-expect-error - Suppressing false positive with Radix UI tooltip */}
-              <DropdownMenuItem
-                onClick={() => onDuplicate?.(project.projectId)}
-              >
+              <DropdownMenuItem onClick={() => HandleDuplicate()}>
                 Duplicate
               </DropdownMenuItem>
-              {/* @ts-expect-error - Suppressing false positive with Radix UI tooltip */}
-              <DropdownMenuItem onClick={() => onDelete?.(project.projectId)}>
+              <DropdownMenuItem onClick={() => HandleDelete()}>
                 Delete
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -71,16 +78,14 @@ const WorkflowCard = ({
         <CardTitle className="text-lg">
           <InlineEdit
             value={project.name}
-            onChange={(newName) =>
-              onUpdate?.(project.projectId, { name: newName })
-            }
+            onChange={(newName) => HandleUpdate({ name: newName })}
           />
         </CardTitle>
         <CardDescription>
           <InlineEdit
             value={project.description}
             onChange={(newDescription) =>
-              onUpdate?.(project.projectId, { description: newDescription })
+              HandleUpdate({ description: newDescription })
             }
             multiline
           />
