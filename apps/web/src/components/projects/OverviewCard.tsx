@@ -2,7 +2,6 @@ import type { ProjectOverview } from '@/types/ProjectOverview';
 import { Button } from '@repo/ui/components/ui/button';
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
