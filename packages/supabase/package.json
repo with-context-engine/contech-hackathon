@@ -1,0 +1,19 @@
+{
+  "name": "@repo/supabase",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@clerk/nextjs": "^6.9.15",
+    "@supabase/ssr": "^0.5.1",
+    "supabase": "^2.6.8"
+  },
+  "exports": {
+    "./middleware": "./src/clients/middleware.tsx",
+    "./server": "./src/clients/server.tsx",
+    "./client": "./src/clients/client.tsx"
+  },
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write"
+  }
+}

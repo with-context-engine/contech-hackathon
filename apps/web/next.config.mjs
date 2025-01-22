@@ -19,6 +19,20 @@ const nextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'localhost',
+      },
+      {
+        protocol: 'https',
+        hostname: 'biqhyndmwebvpmrcxqgv.supabase.co',
+        port: '',
+      },
+    ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);

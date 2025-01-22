@@ -19,7 +19,7 @@ const data = {
       title: 'Projects',
       icon: HardHatIcon,
       isActive: true,
-      href: '/projects',
+      href: '/Projects',
     },
   ],
 };
@@ -31,7 +31,7 @@ export function NavigationMenu({ ...props }: ComponentProps<typeof Sidebar>) {
   const handleMouseLeave = useCallback(() => {
     closeTimer.current = setTimeout(() => {
       setOpen(false);
-    }, 50);
+    }, 500);
   }, [setOpen]);
 
   const handleMouseEnter = useCallback(() => {

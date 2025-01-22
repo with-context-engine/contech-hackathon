@@ -12,7 +12,14 @@
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
     "@types/node": "20.14.15",
-    "@types/react": "18.3.13",
+    "@types/react": "^19.0.7",
     "typescript": "5.5.4"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "update-deps": "bun run recursive-update",
+    "recursive-update": "bun x npm-check-updates -u && bun install && turbo run update-deps --parallel"
   }
 }

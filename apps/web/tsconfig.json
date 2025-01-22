@@ -12,7 +12,10 @@
       "@/*": ["./src/*"],
       "@ui/*": ["../../packages/ui/src/*"],
       "@auth/*": ["../../packages/auth/src/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@stores/*": ["./src/stores/*"],
+      "@utils/*": ["../../packages/utils/src/*"],
+      "@ux/*": ["../../packages/ux/*"]
     }
   },
   "include": [

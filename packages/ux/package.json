@@ -1,0 +1,21 @@
+{
+  "name": "@repo/ux",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "update-deps": "bun run recursive-update",
+    "recursive-update": "bun x npm-check-updates -u && bun install && turbo run update-deps --parallel"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.7",
+    "typescript": "^5.0.0"
+  }
+}

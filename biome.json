@@ -14,7 +14,6 @@
     "enabled": true
   },
   "linter": {
-    "enabled": true,
     "rules": {
       "recommended": true,
       "correctness": {
@@ -26,8 +25,5 @@
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
-  },
-  "files": {
-    "ignore": ["packages/ui/**/**/*.tsx"]
   }
 }
