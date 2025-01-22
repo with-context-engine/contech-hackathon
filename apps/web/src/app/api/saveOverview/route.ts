@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
     projects.map((project: ProjectOverview) => ({
       project_id: project.projectId,
       user_id: project.userId,
+      image_url: project.imageUrl,
       name: project.name,
       description: project.description,
     })),

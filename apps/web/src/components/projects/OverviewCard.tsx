@@ -16,6 +16,7 @@ import {
 import { InlineEdit } from '@ux/src';
 import { MoreVertical } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface ProjectCardProps {
   project: ProjectOverview;
@@ -23,7 +24,7 @@ interface ProjectCardProps {
 
 const WorkflowCard = ({ project }: ProjectCardProps) => {
   const { updateProject, saveProject } = useProjectOverviewStore();
-
+  const router = useRouter();
   // Update Card
   const HandleUpdate = (updates: Partial<ProjectOverview>) => {
     updateProject(project.projectId, updates);
@@ -39,6 +40,7 @@ const WorkflowCard = ({ project }: ProjectCardProps) => {
   const HandleDoubleClick = () => {
     console.log('Double Clicked');
     saveProject();
+    router.push(`/projects/${project.projectId}`);
   };
 
   return (
