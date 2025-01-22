@@ -32,13 +32,13 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@changesets/cli": "2.27.11",
-    "lefthook": "1.10.9",
+    "lefthook": "1.10.10",
     "turbo": "2.3.3"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "bun@1.1.44",
+  "packageManager": "bun@1.1.45",
   "workspaces": ["apps/*", "packages/*"],
   "trustedDependencies": [
     "@biomejs/biome",
@@ -47,6 +47,6 @@
     "lefthook"
   ],
   "dependencies": {
-    "@clerk/themes": "^2.2.8"
+    "@clerk/themes": "^2.2.9"
   }
 }

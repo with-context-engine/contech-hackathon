@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check .",
-    "lint:fix": "biome check . --apply",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
+    "lint:fix": "biome check . --write",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next",
+    "update-deps": "bun run recursive-update",
+    "recursive-update": "bun x npm-check-updates -u && bun install && turbo run update-deps --parallel"
   },
   "dependencies": {
     "@repo/auth": "workspace:*",

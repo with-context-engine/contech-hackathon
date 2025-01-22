@@ -6,7 +6,10 @@
   "scripts": {
     "ui:add": "bunx --bun shadcn@latest add",
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "update-deps": "bun x npm-check-updates -u && bun install"
+    "update-deps": "bun x npm-check-updates -u && bun install",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "recursive-update": "bun x npm-check-updates -u && bun install && turbo run update-deps --parallel"
   },
   "license": "MIT",
   "devDependencies": {

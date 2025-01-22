@@ -16,14 +16,13 @@
  * window.addEventListener('resize', handleResize);
  */
 export function debounce<Args extends unknown[], R>(
-    func: (...args: Args) => R,
-    delay: number,
-  ): (...args: Args) => void {
-    let timeoutId: ReturnType<typeof setTimeout>;
-  
-    return (...args: Args) => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => func(...args), delay);
-    };
-  }
-  
+  func: (...args: Args) => R,
+  delay: number,
+): (...args: Args) => void {
+  let timeoutId: ReturnType<typeof setTimeout>;
+
+  return (...args: Args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+}

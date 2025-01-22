@@ -14,8 +14,6 @@
     "enabled": true
   },
   "linter": {
-    "enabled": true,
-    "ignore": ["packages/**"],
     "rules": {
       "recommended": true,
       "correctness": {
@@ -27,8 +25,5 @@
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
-  },
-  "files": {
-    "ignore": ["packages/**"]
   }
 }
