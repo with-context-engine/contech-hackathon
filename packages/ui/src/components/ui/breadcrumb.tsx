@@ -74,6 +74,7 @@ const BreadcrumbPage = React.forwardRef<
     aria-disabled="true"
     aria-current="page"
     className={cn('font-normal text-foreground', className)}
+    tabIndex={0} // Add tabIndex to make it focusable
     {...props}
   />
 ));
