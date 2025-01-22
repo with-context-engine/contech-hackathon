@@ -53,4 +53,4 @@ const InlineEdit: React.FC<InlineEditProps> = ({
   );
 };
 
-export default InlineEdit;
+export { InlineEdit };

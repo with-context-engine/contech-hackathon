@@ -13,6 +13,7 @@ import {
 import { Skeleton } from '@ui/components/ui/skeleton';
 import { PlusIcon } from 'lucide-react';
 import type React from 'react';
+import WorkflowCard from './OverviewCard';
 
 /**
  * WorkflowSkeleton component renders a skeleton UI for loading states.
@@ -82,7 +83,7 @@ export default function WorkflowOverview() {
           ) : (
             <>
               {projects.map((project) => (
-                <div key={project.projectId}>{project.name}</div>
+                <WorkflowCard key={project.projectId} project={project} />
               ))}
             </>
           )}

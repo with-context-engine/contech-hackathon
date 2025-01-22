@@ -14,7 +14,10 @@ interface ProjectOverviewState {
 
   // CRUD Operations
   createProject: (project?: Partial<ProjectOverview>) => void;
-  // updateProject: (projectId: string, updates: Partial<Omit<ProjectOverview, 'projectId' | 'userId'>>) => Promise<void>;
+  updateProject: (
+    projectId: string,
+    updates: Partial<Omit<ProjectOverview, 'projectId' | 'userId'>>,
+  ) => Promise<void>;
 }
 
 export const useProjectOverviewStore = create<ProjectOverviewState>()(
@@ -46,6 +49,19 @@ export const useProjectOverviewStore = create<ProjectOverviewState>()(
       set((state) => ({
         projects: [...state.projects, newProject],
       }));
+    },
+    updateProject: async (
+      projectId: string,
+      updates: Partial<Omit<ProjectOverview, 'projectId' | 'userId'>>,
+    ) => {
+      set((state) => ({
+        projects: state.projects.map((project) =>
+          project.projectId === projectId
+            ? { ...project, ...updates }
+            : project,
+        ),
+      }));
+      return Promise.resolve();
     },
   }),
 );

@@ -13,7 +13,13 @@ export async function GET(req: NextRequest) {
   const darkMode = searchParams.get('dark') === 'true';
 
   const svg = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+    <svg 
+      width="${width}" 
+      height="${height}" 
+      viewBox="0 0 ${width} ${height}"
+      preserveAspectRatio="xMidYMid slice"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect width="100%" height="100%" fill="${darkMode ? '#2f3e4e' : '#f3f4f6'}"/>
     </svg>
   `.trim();
