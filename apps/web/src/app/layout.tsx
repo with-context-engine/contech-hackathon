@@ -38,7 +38,7 @@ export default function RootLayout({
                 <SignedOutView />
               </SignedOut>
               <SignedIn>
-                <SidebarProvider>
+                <SidebarProvider defaultOpen={false}>
                   <div className="flex min-h-screen w-full">
                     <NavigationMenu />
                     <main className="flex-1 overflow-auto w-full">
