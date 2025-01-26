@@ -21,6 +21,9 @@ import { QueryCommand } from './QueryCommand';
 import { SimpleEdge } from './edges/SimpleEdge';
 import { BaseNode } from './nodes/BaseNode';
 
+// Add React import for MouseEvent type
+import type { MouseEvent as ReactMouseEvent } from 'react';
+
 const nodeTypes = {
   concept: BaseNode,
   material: BaseNode,
@@ -71,9 +74,25 @@ export function Graph() {
     event.stopPropagation();
   }, []);
 
+  const onNodeDragStart = useCallback((event: ReactMouseEvent, node: Node) => {
+    // Prevent node dragging if clicking a link
+    if (node.data.link && event.target instanceof HTMLElement) {
+      const isClickingNode = event.target.closest('.react-flow__node');
+      if (isClickingNode) {
+        event.preventDefault();
+      }
+    }
+  }, []);
+
   const handleQueryResult = (result: GraphQueryResult) => {
-    // Use addNodes and addEdges instead of setNodes and setEdges
-    addNodes(result.nodes);
+    // Transform nodes to include required properties
+    const nodesWithPosition = result.nodes.map((node, index) => ({
+      ...node,
+      id: node.id || `node-${index}`,
+      position: { x: index * 200, y: 100 },
+    }));
+
+    addNodes(nodesWithPosition);
     addEdges(result.edges);
 
     // Optional: Center view on new nodes
@@ -117,6 +136,8 @@ export function Graph() {
           elementsSelectable={true}
           deleteKeyCode="Backspace"
           selectNodesOnDrag={false}
+          onNodeDragStart={onNodeDragStart}
+          draggable={true}
         >
           <Controls className="m-4" />
           <Background color="hsl(var(--muted-foreground))" gap={20} />

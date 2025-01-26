@@ -1,0 +1,16 @@
+.react-flow__node {
+  &[data-has-link="true"] {
+    &:hover {
+      cursor: pointer;
+    }
+    
+    &::after {
+      content: '↗';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  }
+} 

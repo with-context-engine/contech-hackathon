@@ -1,12 +1,24 @@
-interface NodeData {
-  [key: string]: string | number | boolean | null;
+import { Node } from 'reactflow';
+
+export interface NodeData {
+  label: string;
+  details: string;
+  category: string;
+  expandable: boolean;
+  link?: string;
 }
 
 export interface GraphNode {
   id: string;
-  type: string;
-  data: NodeData;
+  type: 'concept' | 'material' | 'technique' | 'regulation';
   position: { x: number; y: number };
+  data: {
+    label: string;
+    details: string;
+    category: string;
+    expandable: boolean;
+    link?: string;
+  };
 }
 
 export interface GraphEdge {

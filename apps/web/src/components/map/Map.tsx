@@ -93,7 +93,7 @@ export function LocationMap({ locations, onLocationSelect }: MapProps) {
           <h3 class="font-semibold text-sm mb-2">${address}</h3>
           <div class="flex items-center gap-2">
             <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-medium rounded-full bg-orange-900/50 text-orange-200">
-              ${tcoCount} TCOs
+              ${tcoCount} COs
             </span>
           </div>
         </div>
@@ -120,28 +120,28 @@ export function LocationMap({ locations, onLocationSelect }: MapProps) {
         className="h-full w-full rounded-xl overflow-hidden"
       />
       <div className="absolute bottom-4 right-4 bg-gray-900/95 border border-gray-700 px-6 py-4 rounded-xl shadow-xl text-sm">
-        <p className="font-semibold text-gray-100 mb-3">TCO Intensity Legend</p>
+        <p className="font-semibold text-gray-100 mb-3">CO Intensity Legend</p>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-3">
             <div
               className="h-4 w-4 rounded-full shadow-sm"
               style={{ background: 'rgba(255, 107, 0, 0.3)' }}
             />
-            <span className="text-sm text-gray-300">Low (1-3 TCOs)</span>
+            <span className="text-sm text-gray-300">Low (1-3 COs)</span>
           </div>
           <div className="flex items-center gap-3">
             <div
               className="h-4 w-4 rounded-full shadow-sm"
               style={{ background: 'rgba(255, 107, 0, 0.6)' }}
             />
-            <span className="text-sm text-gray-300">Medium (4-6 TCOs)</span>
+            <span className="text-sm text-gray-300">Medium (4-6 COs)</span>
           </div>
           <div className="flex items-center gap-3">
             <div
               className="h-4 w-4 rounded-full shadow-sm"
               style={{ background: 'rgba(255, 107, 0, 1)' }}
             />
-            <span className="text-sm text-gray-300">High (7+ TCOs)</span>
+            <span className="text-sm text-gray-300">High (7+ COs)</span>
           </div>
         </div>
       </div>
