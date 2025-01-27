@@ -19,7 +19,7 @@ const data = {
       title: 'Projects',
       icon: HardHatIcon,
       isActive: true,
-      href: '/Projects',
+      href: '/projects',
     },
   ],
 };

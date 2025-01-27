@@ -15,7 +15,8 @@
       "@components/*": ["./src/components/*"],
       "@stores/*": ["./src/stores/*"],
       "@utils/*": ["../../packages/utils/src/*"],
-      "@ux/*": ["../../packages/ux/*"]
+      "@ux/*": ["../../packages/ux/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": [

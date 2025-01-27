@@ -1,0 +1,64 @@
+{
+  "locations": [
+    {
+      "address": "350 5th Ave, New York, NY 10118",
+      "tcoCount": 15
+    },
+    {
+      "address": "20 W 34th St, New York, NY 10001",
+      "tcoCount": 8
+    },
+    {
+      "address": "45 Rockefeller Plaza, New York, NY 10111",
+      "tcoCount": 23
+    },
+    {
+      "address": "1071 5th Ave, New York, NY 10128",
+      "tcoCount": 12
+    },
+    {
+      "address": "11 W 53rd St, New York, NY 10019",
+      "tcoCount": 19
+    },
+    {
+      "address": "240 Kent Ave, Brooklyn, NY 11249",
+      "tcoCount": 14
+    },
+    {
+      "address": "90 Wythe Ave, Brooklyn, NY 11249",
+      "tcoCount": 21
+    },
+    {
+      "address": "1 Bushwick Ave, Brooklyn, NY 11211",
+      "tcoCount": 9
+    },
+    {
+      "address": "56 Berry St, Brooklyn, NY 11249",
+      "tcoCount": 17
+    },
+    {
+      "address": "100 N 11th St, Brooklyn, NY 11249",
+      "tcoCount": 11
+    },
+    {
+      "address": "215 Moore St, Brooklyn, NY 11206",
+      "tcoCount": 16
+    },
+    {
+      "address": "261 Moore St, Brooklyn, NY 11206",
+      "tcoCount": 8
+    },
+    {
+      "address": "140 Morgan Ave, Brooklyn, NY 11237",
+      "tcoCount": 13
+    },
+    {
+      "address": "54 Noll St, Brooklyn, NY 11206",
+      "tcoCount": 7
+    },
+    {
+      "address": "198 Randolph St, Brooklyn, NY 11237",
+      "tcoCount": 19
+    }
+  ]
+}
