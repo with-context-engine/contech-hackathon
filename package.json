@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@changesets/cli": "2.27.11",
+    "@changesets/cli": "2.27.12",
     "lefthook": "1.10.10",
     "turbo": "2.3.4"
   },
